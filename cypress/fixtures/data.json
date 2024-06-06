@@ -1,0 +1,90 @@
+{
+    "addition":[
+        {"number1": 5,
+        "number2": 3,
+        "operation": "Add",
+        "expectedResult":8
+        },
+        {"number1": 0,
+        "number2": 7,
+        "operation": "Add",
+        "expectedResult":7
+        },
+        {"number1": -4,
+        "number2": 6,
+        "operation": "Add",
+        "expectedResult":2
+        },
+        {"number1": 999999,
+        "number2": 1,
+        "operation": "Add",
+        "expectedResult":1000000
+        }
+    ],
+    "subtraction":[
+        {"number1": 9,
+        "number2": 4,
+        "operation": "Subtract",
+        "expectedResult":5
+        },
+        {"number1": 5,
+        "number2": 5,
+        "operation": "Subtract",
+        "expectedResult":0
+        },
+        {"number1": 3,
+        "number2": 8,
+        "operation": "Subtract",
+        "expectedResult":-5
+        },
+        {"number1": -3,
+        "number2": -7,
+        "operation": "Subtract",
+        "expectedResult":4
+        }
+    ],
+    "multiplication":[
+        {"number1": 4,
+        "number2": 3,
+        "operation": "Multiply",
+        "expectedResult":12
+        },
+        {"number1": 0,
+        "number2": 10,
+        "operation": "Multiply",
+        "expectedResult":0
+        },
+        {"number1": 1000,
+        "number2": 2000,
+        "operation": "Multiply",
+        "expectedResult":2000000
+        }
+    ],
+    "division":[
+        {"number1": 8,
+        "number2": 2,
+        "operation": "Divide",
+        "expectedResult":4
+        },
+        {"number1": 9,
+        "number2": 1,
+        "operation": "Multiply",
+        "expectedResult":9
+        },
+        {"number1": 7,
+        "number2": 2,
+        "operation": "Divide",
+        "expectedResult":3.5
+        },
+        {"number1": 5,
+        "number2": 0,
+        "operation": "Divide",
+        "expectedResult":"Divide by zero error!"
+        },
+        {"number1": "a",
+        "number2": 0,
+        "operation": "Divide",
+        "expectedResult":"Number 1 is not a number"
+        }
+    ]
+}

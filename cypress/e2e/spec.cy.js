@@ -1,75 +1,85 @@
 import { loadLandPage,calculate, dividebyzero,expectedErrorCalculate} from "./Actions/homepageAction";
 import { homeElements } from "./elements/home-Elements";
 
+const dataJson =require('..//fixtures/data.json');
+
 describe('Calculator test cases Protoype',() => {
   beforeEach(() =>{
     loadLandPage(0);
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
@@ -80,69 +90,77 @@ describe('Calculator test cases Build 1',() => {
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
@@ -153,69 +171,77 @@ describe('Calculator test cases Build 2',() => {
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
@@ -226,69 +252,77 @@ describe('Calculator test cases Build 3',() => {
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
@@ -299,69 +333,77 @@ describe('Calculator test cases Build 4',() => {
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
@@ -372,361 +414,402 @@ describe('Calculator test cases Build 5',() => {
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
 
-describe('Calculator test cases Build 6 ',() => {
+describe('Calculator test cases Build 6',() => {
   beforeEach(() =>{
     loadLandPage(6);
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
 
-describe('Calculator test cases Build 7 ',() => {
+
+describe('Calculator test cases Build 7',() => {
   beforeEach(() =>{
     loadLandPage(7);
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
 
-describe('Calculator test cases Build 8 ',() => {
+describe('Calculator test cases Build 8',() => {
   beforeEach(() =>{
     loadLandPage(8);
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
 
-describe('Calculator test cases Build 9 ',() => {
+describe('Calculator test cases Build 9',() => {
   beforeEach(() =>{
     loadLandPage(9);
   })
 
   it('simple addition',() => {
-    calculate(1,2,"Add",3)
+    calculate(dataJson.addition[0].number1,dataJson.addition[0].number2,dataJson.addition[0].operation,dataJson.addition[0].expectedResult)
   })
   
   it('adition with zero',() => {
-    calculate(0,2,"Add",2)
+    calculate(dataJson.addition[1].number1,dataJson.addition[1].number2,dataJson.addition[1].operation,dataJson.addition[1].expectedResult)
   })
   
   it('adition with negative number',() => {
-    calculate(-1,2,"Add",1)
+    calculate(dataJson.addition[2].number1,dataJson.addition[2].number2,dataJson.addition[2].operation,dataJson.addition[2].expectedResult)
   })
   
   it('addition of Large Numbers',() => {
-    calculate(999999,1,"Add",1000000)
+    calculate(dataJson.addition[3].number1,dataJson.addition[3].number2,dataJson.addition[3].operation,dataJson.addition[3].expectedResult)
   })
   
   it('Simple Subtraction',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[0].number1,dataJson.subtraction[0].number2,dataJson.subtraction[0].operation,dataJson.subtraction[0].expectedResult)
+
   })
   
   
   it('subtraction Resulting in Zero',() => {
-    calculate(9,4,"Subtract",5)
+    calculate(dataJson.subtraction[1].number1,dataJson.subtraction[1].number2,dataJson.subtraction[1].operation,dataJson.subtraction[1].expectedResult)
+
   })
   
   
   it('subtraction  with Negative Result',() => {
-    calculate(3,8,"Subtract",-5)
+    calculate(dataJson.subtraction[2].number1,dataJson.subtraction[2].number2,dataJson.subtraction[2].operation,dataJson.subtraction[2].expectedResult)
+
   })
   
   it('subtraction with Negative Numbers',() => {
-    calculate(-3,-7,"Subtract",4)
+    calculate(dataJson.subtraction[3].number1,dataJson.subtraction[3].number2,dataJson.subtraction[3].operation,dataJson.subtraction[3].expectedResult)
+
   })
   
   it('simple Multiplication',() => {
-    calculate(4,3,"Multiply",12)
+    calculate(dataJson.multiplication[0].number1,dataJson.multiplication[0].number2,dataJson.multiplication[0].operation,dataJson.multiplication[0].expectedResult)
+
   })
   
   it('multiplication with Zero',() => {
-    calculate(0,10,"Multiply",0)
+    calculate(dataJson.multiplication[1].number1,dataJson.multiplication[1].number2,dataJson.multiplication[1].operation,dataJson.multiplication[1].expectedResult)
+
   })
   
   it('multiplication with Large Numbers',() => {
-    calculate(1000 ,2000,"Multiply",2000000)
+    calculate(dataJson.multiplication[2].number1,dataJson.multiplication[2].number2,dataJson.multiplication[2].operation,dataJson.multiplication[2].expectedResult)
+
   })
   
   it(' simple Division',() => {
-    calculate(8 ,2,"Divide",4)
+    calculate(dataJson.division[0].number1,dataJson.division[0].number2,dataJson.division[0].operation,dataJson.division[0].expectedResult)
+
   })
   
   it(' division by one',() => {
-    calculate(9 ,1,"Divide",9)
+    calculate(dataJson.division[1].number1,dataJson.division[1].number2,dataJson.division[1].operation,dataJson.division[1].expectedResult)
   })
   
   it(' division Resulting in Fraction',() => {
-    calculate(7 ,2,"Divide",3.5)
+    calculate(dataJson.division[2].number1,dataJson.division[2].number2,dataJson.division[2].operation,dataJson.division[2].expectedResult)
   })
   
   it(' division by zero',() => {
-    expectedErrorCalculate(5 ,0,"Divide",'Divide by zero error!')
+    calculate(dataJson.division[3].number1,dataJson.division[3].number2,dataJson.division[3].operation,dataJson.division[3].expectedResult)
   })
   
   it(' does NOT allow characters as input  ',() => {
-    expectedErrorCalculate('a' ,0,"Divide","Number 1 is not a number")
+    calculate(dataJson.division[4].number1,dataJson.division[4].number2,dataJson.division[4].operation,dataJson.division[4].expectedResult)
   })
 
 })
